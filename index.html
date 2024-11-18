@@ -1,46 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>	ATTENDEES LOGIN PANEL</title>
-  <link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttendEase Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Slide Navbar</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
-	<div class="main">  	
-		<input type="checkbox" id="chk" aria-hidden="true">
-
-			<div class="signup">
-				<form>
-					<label for="chk" aria-hidden="true">Sign up</label>
-					<input type="text" name="txt" placeholder="User name" required="">
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Sign up</button>
-				</form>
-			</div>
-
-			<div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Login</label>
-					<input type="email" name="email" placeholder="Email" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button>Login</button>
-				</form>
-			</div>
-	</div>
-</body>
-</html>
-<!-- partial -->
-  
+    <div class="dashboard">
+        <header>
+            <h1>Dashboard</h1>
+            <div class="header-right">
+                <input type="text" placeholder="Search...">
+                <div class="notification"></div>
+                <div class="user-avatar"></div>
+            </div>
+        </header>
+        <main>
+            <div class="grid">
+                <div class="card large-card">
+                    <h2>82</h2>
+                    <p>Journey Mapping</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 82%;"></div>
+                    </div>
+                </div>
+                <div class="card dark-card">
+                    <h2>10</h2>
+                    <p>Assignment Progress</p>
+                </div>
+                <div class="card">
+                    <h3>Marks Status</h3>
+                    <div class="stat">
+                        <h2>27</h2>
+                        <p>+30%</p>
+                    </div>
+                    <div class="mini-chart"></div>
+                </div>
+                <div class="card">
+                    <h3>Attendance Follow-Up</h3>
+                    <div class="stat">
+                        <h2>38</h2>
+                        <p>+15%</p>
+                    </div>
+                    <div class="dot-chart">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot orange"></div>
+                        <div class="dot orange"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <div class="card large-card">
+                    <h3>Subject Wise Performance</h3>
+                    <div class="stat">
+                        <h2>65</h2>
+                        <p>+12%</p>
+                    </div>
+                    <div class="bar-chart">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar orange"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="card orange-card">
+                    <h2>Follow The Paneer Creator on Instagram</h2>
+                </div>
+                <div class="card">
+                    <div class="circular-stat">
+                        <svg viewBox="0 0 36 36">
+                            <path d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#E5E5E5"
+                                stroke-width="2"
+                            />
+                            <path d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831"
+                                fill="none"
+                                stroke="#FF6B35"
+                                stroke-width="2"
+                                stroke-dasharray="20, 100"
+                            />
+                        </svg>
+                        <div class="percentage">20</div>
+                    </div>
+                    <p>The largest part of all cases in Product class</p>
+                </div>
+                <div class="card">
+                    <h3>High priority cases</h3>
+                    <div class="stat">
+                        <h2>16</h2>
+                        <p>+15%</p>
+                    </div>
+                    <div class="triangle-chart">
+                        <div class="triangle"></div>
+                        <div class="triangle"></div>
+                        <div class="triangle orange"></div>
+                        <div class="triangle"></div>
+                    </div>
+                </div>
+                <!-- <div class="card dark-card">
+                    <h3>Create your custom dashboard</h3>
+                    <p>+Add new widget</p>
+                </div> -->
+            </div>
+        </main>
+    </div>
 </body>
 </html>

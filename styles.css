@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.notification, .user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.large-card {
+    grid-column: span 2;
+}
+
+.dark-card {
+    background-color: #333;
+    color: white;
+}
+
+.orange-card {
+    background-color: #FF6B35;
+    color: white;
+}
+
+h2 {
+    font-size: 36px;
+    margin: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #999;
+    margin: 0;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #FF6B35;
+}
+
+.stat {
+    display: flex;
+    align-items: baseline;
+}
+
+.stat h2 {
+    margin-right: 10px;
+}
+
+.mini-chart, .dot-chart, .bar-chart, .triangle-chart {
+    margin-top: 20px;
+}
+
+.dot-chart {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.dot {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.dot.orange {
+    background-color: #FF6B35;
+}
+
+.bar-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+}
+
+.bar {
+    width: 18%;
+    background-color: #333;
+    height: 80%;
+}
+
+.bar.orange {
+    background-color: #FF6B35;
+    height: 60%;
+}
+
+.circular-stat {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.circular-stat svg {
+    width: 100%;
+    height: 100%;
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.triangle-chart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #333;
+}
+
+.triangle.orange {
+    border-bottom-color: #FF6B35;
+}
