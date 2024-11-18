@@ -1,3 +1,4 @@
+/* Base styles for responsiveness */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,6 +12,7 @@ body {
     padding: 20px;
 }
 
+/* Header Section */
 header {
     display: flex;
     justify-content: space-between;
@@ -43,6 +45,7 @@ input[type="text"] {
     margin-left: 10px;
 }
 
+/* Grid Layout */
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -53,7 +56,8 @@ input[type="text"] {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .large-card {
@@ -63,11 +67,15 @@ input[type="text"] {
 .dark-card {
     background-color: #333;
     color: white;
-}
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+
 
 .orange-card {
     background-color: #FF6B35;
     color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -87,6 +95,13 @@ p {
     margin: 0;
 }
 
+/* Hover effects for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress Bar */
 .progress-bar {
     height: 5px;
     background-color: #eee;
@@ -100,6 +115,7 @@ p {
     background-color: #FF6B35;
 }
 
+/* Stats Section */
 .stat {
     display: flex;
     align-items: baseline;
@@ -113,6 +129,7 @@ p {
     margin-top: 20px;
 }
 
+/* Dot Chart */
 .dot-chart {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -130,6 +147,7 @@ p {
     background-color: #FF6B35;
 }
 
+/* Bar Chart */
 .bar-chart {
     display: flex;
     justify-content: space-between;
@@ -148,6 +166,7 @@ p {
     height: 60%;
 }
 
+/* Circular Stat */
 .circular-stat {
     width: 100px;
     height: 100px;
@@ -169,6 +188,7 @@ p {
     font-weight: bold;
 }
 
+/* Triangle Chart */
 .triangle-chart {
     display: flex;
     justify-content: space-between;
@@ -184,4 +204,116 @@ p {
 
 .triangle.orange {
     border-bottom-color: #FF6B35;
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .stat h2 {
+        font-size: 18px;
+    }
+
+    .percentage {
+        font-size: 18px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+/* Tooltip */
+.card .tooltip {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.card:hover .tooltip {
+    display: block;
+}
+/* Global Background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+}
+
+/* Alternatively, you can use a subtle pattern as background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-4.png') repeat, #ffffff;
+    background-size: 100% 100%;
+}
+
+/* Dashboard Background */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Background */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Backgrounds */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Card Styling */
+
+/* Orange Card Styling */
+
+/* Additional Enhancements for Consistency */
+h1, h2, h3, p {
+    font-family: Arial, sans-serif;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
