@@ -30,17 +30,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# attendease/settings.py
+
 INSTALLED_APPS = [
-    'django.contrib.admin',       # Ensure this is included
+    'django.contrib.admin',  # Admin app
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Your other apps, e.g., 'dashboard',
+    'dashboard',  # Your app
 ]
-
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
