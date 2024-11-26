@@ -1,0 +1,176 @@
+<html>
+ <head>
+  <title>
+   Student Profile Page
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #fdf5e6;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+        }
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .profile-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-photo img {
+            border-radius: 50%;
+        }
+        .profile-details {
+            flex: 1;
+            width: 100%;
+        }
+        .profile-details h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .profile-details p {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #555;
+        }
+        .profile-details p strong {
+            color: #333;
+            font-weight: 700;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            background-color: #ff7f50;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            margin-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .buttons button:hover {
+            background-color: #ff6347;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="profile-card">
+    <div class="profile-photo">
+     <img alt="Profile photo of Vikrant Kumar, a young man with short black hair, wearing a casual shirt, smiling at the camera" height="150" src="https://storage.googleapis.com/a1aa/image/aRZ9P9fzFrWpViYZrR87PZecs0q7dfPbGhDlDfUvkz7PktTPB.jpg" width="150"/>
+    </div>
+    <div class="profile-details">
+     <h1>
+      Vikrant Kumar
+     </h1>
+     <p>
+      <strong>
+       Father's Name:
+      </strong>
+      Arvind Kumar Rajput
+     </p>
+     <p>
+      <strong>
+       College Name:
+      </strong>
+      Dronacharya Group of Institutions
+     </p>
+     <p>
+      <strong>
+       College Roll No:
+      </strong>
+      123456
+     </p>
+     <p>
+      <strong>
+       University Name:
+      </strong>
+      AKTU
+     </p>
+     <p>
+      <strong>
+       University Roll No:
+      </strong>
+      789012
+     </p>
+     <p>
+      <strong>
+       Session:
+      </strong>
+      2022 - 2026
+     </p>
+     <p>
+      <strong>
+       Branch:
+      </strong>
+      Computer Science
+     </p>
+     <p>
+      <strong>
+       Current Semester:
+      </strong>
+      3rd
+     </p>
+     <p>
+      <strong>
+       Fees Status:
+      </strong>
+      Paid
+     </p>
+     <p>
+      <strong>
+       Backlogs:
+      </strong>
+      None
+     </p>
+     <div class="buttons">
+      <button>
+       Add Resume
+      </button>
+      <button>
+       Check Result
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
