@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttendEase - Student Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: block;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a73e8;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .info-group {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #ff7070;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #ff9f9f;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status-paid {
+            background-color: #e6f4ea;
+            color: #1e8e3e;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff7070;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff7070;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="/placeholder.svg" alt="AttendEase Logo" width="32" height="32">
+                ATTENDEASE
+            </div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Time Table</a>
+                <a href="#">Examination</a>
+                <a href="#">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="/placeholder.svg" alt="Vikrant Kumar" class="profile-image">
+                <h1 class="profile-name">Vikrant Kumar</h1>
+                <p>Computer Science Student</p>
+            </div>
+
+            <div class="profile-info">
+                <div class="info-group">
+                    <span class="info-label">Father's Name</span>
+                    <span class="info-value">Arvind Kumar Rajput</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">College Name</span>
+                    <span class="info-value">Dronacharya Group of Institutions</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">College Roll No</span>
+                    <span class="info-value">123456</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">University Name</span>
+                    <span class="info-value">AKTU</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">University Roll No</span>
+                    <span class="info-value">789012</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Session</span>
+                    <span class="info-value">2022 - 2026</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Branch</span>
+                    <span class="info-value">Computer Science</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Current Semester</span>
+                    <span class="info-value">3rd</span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Fees Status</span>
+                    <span class="info-value">
+                        <span class="status-badge status-paid">Paid</span>
+                    </span>
+                </div>
+                <div class="info-group">
+                    <span class="info-label">Backlogs</span>
+                    <span class="info-value">None</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary">Add Resume</button>
+                <button class="btn btn-secondary">Check Result</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
