@@ -13,39 +13,40 @@
 <body>
     <header>
         <div class="logo" title="COLLEGE Management SYSTEM">
-     
-            <h2><span class="danger">ATTEND</span>EASE</h2>
-        </div>
-        <div class="navbar">
-            <a href="index.html" class="active">
-                <span class="material-icons-sharp">home</span>
-                <h3>Home</h3>
-            </a>
-            <a href="timetable.html" onclick="timeTableAll()">
-                <span class="material-icons-sharp">today</span>
-                <h3>Time Table</h3>
-            </a> 
-            <a href="exam.html">
-                <span class="material-icons-sharp">grid_view</span>
-                <h3>Examination</h3>
-            </a>
-            <a href="password.html">
-                <span class="material-icons-sharp">password</span>
-                <h3>Change Password</h3>
-            </a>
-            <a href="#">
-                <span class="material-icons-sharp" onclick="">logout</span>
-                <h3>Logout</h3>
-            </a>
-        </div>
+    <h2><span class="danger">ATTEND</span>EASE</h2>
+</div>
+<div class="navbar">
+    <a href="index.html" class="active">
+        <span class="material-icons-sharp">home</span>
+        <h3>Home</h3>
+    </a>
+    <a href="timetable.html" onclick="timeTableAll()">
+        <span class="material-icons-sharp">today</span>
+        <h3>Time Table</h3>
+    </a> 
+    <a href="exam.html">
+        <span class="material-icons-sharp">grid_view</span>
+        <h3>Examination</h3>
+    </a>
+    <a href="password.html">
+        <span class="material-icons-sharp">password</span>
+        <h3>Change Password</h3>
+    </a>
+    <a href="#" onclick="logout()">
+        <span class="material-icons-sharp">logout</span>
+        <h3>Logout</h3>
+    </a>
+</div>
         <div id="profile-btn">
             <span class="material-icons-sharp">person</span>
         </div>
+       <!-- Replace the existing theme toggler with this -->
         <div class="theme-toggler">
-            <span class="material-icons-sharp active">light_mode</span>
-            <span class="material-icons-sharp">dark_mode</span>
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
         </div>
-        
     </header>
     <div class="container">
         <aside>

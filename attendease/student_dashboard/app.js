@@ -1,6 +1,6 @@
 const sideMenu = document.querySelector("aside");
 const profileBtn = document.querySelector("#profile-btn");
-const themeToggler = document.querySelector(".theme-toggler");
+const themeToggle = document.getElementById('themeToggle');
 const nextDay = document.getElementById('nextDay');
 const prevDay = document.getElementById('prevDay');
 
@@ -13,11 +13,21 @@ window.onscroll = () => {
     else{document.querySelector('header').classList.remove('active');}
 }
 
-themeToggler.onclick = function() {
-    document.body.classList.toggle('dark-theme');
-    themeToggler.querySelector('span:nth-child(1)').classList.toggle('active')
-    themeToggler.querySelector('span:nth-child(2)').classList.toggle('active')
-}
+
+
+themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-theme'); // Assuming you have a class for dark theme
+    themeToggle.checked ? localStorage.setItem('theme', 'dark') : localStorage.setItem('theme', 'light');
+});
+
+// Load the theme from localStorage on page load
+window.onload = () => {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.checked = true; // Set the toggle to checked if dark theme is active
+    }
+};
 
 let setData = (day) =>{
     document.querySelector('table tbody').innerHTML = ' '; //To clear out previous table data;  
