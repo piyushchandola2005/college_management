@@ -213,3 +213,28 @@ const Saturday =[
         type: ''
     }
 ]
+
+document.addEventListener('DOMContentLoaded', function() {
+    fetchTimetable();
+});
+
+function fetchTimetable() {
+    fetch('/api/timetable/')
+        .then(response => response.json())
+        .then(data => {
+            const timetableBody = document.querySelector('#timetable tbody');
+            timetableBody.innerHTML = '';
+
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.time}</td>
+                    <td>${item.room}</td>
+                    <td>${item.subject}</td>
+                    <td>${item.teacher}</td>
+                `;
+                timetableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching timetable:', error));
+}

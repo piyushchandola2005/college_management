@@ -1,40 +1,43 @@
-import json
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+import logging
+from .models import Announcement, Mark
+logger = logging.getLogger(__name__)
 
-# Create your views here.
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-from .models import Attendance
+@login_required
+def admin_dashboard_view(request):
+    logger.debug("Rendering admin dashboard")
+    return render(request, 'dashboard/admin_dashboard.html')
 
-# View to update attendance
-@csrf_exempt  # Disable CSRF for simplicity (use a token in production)
-def update_attendance(request):
-    if request.method == 'POST':
-        try:
-            # Parse the JSON data from the request body
-            data = json.loads(request.body)
-            student_id = data.get('studentId')
-            status = data.get('status')
-
-            # Check if student already exists and update attendance
-            attendance, created = Attendance.objects.update_or_create(
-                student_id=student_id, 
-                defaults={'status': status}
-            )
-            
-            return JsonResponse({'message': 'Attendance updated successfully.'}, status=200)
-
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
-    
-    return JsonResponse({'message': 'Invalid request method.'}, status=405)
-
-# View to fetch marks status (just a mock example)
-def marks_status(request):
-    # Example: Fetching mock marks for a student
-    return JsonResponse({'marks': 85})
+@login_required
+def student_dashboard_view(request):
+    logger.debug("Rendering student dashboard")
+    return render(request, 'dashboard/student_dashbaord.html')
 
 
-''' update_attendance: This view listens for POST requests to update a student's attendance status. It expects JSON data with the studentId and status (either "present" or "absent").
-    marks_status: A simple view to return mock marks status data as JSON. In a real application, this data would be fetched from the database.
-'''
+
+@login_required
+def student_dashboard_view(request):
+    announcements = Announcement.objects.all()
+    marks = Mark.objects.filter(student=request.user)
+    context = {
+        'announcements': announcements,
+        'marks': marks,
+    }
+    return render(request, 'dashboard/student_dashboard.html', context)
+
+@login_required
+def timetable_view(request):
+    return render(request, 'dashboard/timetable.html')
+
+@login_required
+def exam_view(request):
+    return render(request, 'dashboard/exam.html')
+
+@login_required
+def change_password_view(request):
+    return render(request, 'dashboard/change_password.html')
+
+@login_required
+def profile_view(request):
+    return render(request, 'dashboard/profile.html')
