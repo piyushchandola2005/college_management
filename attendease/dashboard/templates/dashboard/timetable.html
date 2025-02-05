@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title>
+    <title>Timetable</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="shortcut icon" href="./images/2.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="{% static 'dashboard/images/2.png' %}">
+    <link rel="stylesheet" href="{% static 'dashboard/css/style.css' %}">
 </head>
 <body>
     <header>
@@ -16,23 +17,23 @@
             <h2><span class="danger">ATTEND</span>EASE</h2>
         </div>
         <div class="navbar">
-            <a href="index.html">
+            <a href="{% url 'dashboard:student_dashboard_view' %}">
                 <span class="material-icons-sharp">home</span>
                 <h3>Home</h3>
             </a>
-            <a href="timetable.html" class="active" onclick="timeTableAll()">
+            <a href="{% url 'dashboard:timetable_view' %}" class="active">
                 <span class="material-icons-sharp">today</span>
                 <h3>Time Table</h3>
             </a> 
-            <a href="exam.html">
+            <a href="{% url 'dashboard:exam_view' %}">
                 <span class="material-icons-sharp">grid_view</span>
                 <h3>Examination</h3>
             </a>
-            <a href="password.html">
+            <a href="{% url 'dashboard:change_password_view' %}">
                 <span class="material-icons-sharp">password</span>
                 <h3>Change Password</h3>
             </a>
-            <a href="#">
+            <a href="{% url 'dashboard:logout_view' %}">
                 <span class="material-icons-sharp">logout</span>
                 <h3>Logout</h3>
             </a>
@@ -61,16 +62,29 @@
                         <th>Time</th>
                         <th>Room No.</th>
                         <th>Subject</th>
-                        <th></th>
+                        <th>Teacher Name </th>
+                        </th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    {% for entry in timetable %}
+                    <tr>
+                        <td>{{ entry.time }}</td>
+                        <td>{{ entry.room }}</td>
+                        <td>{{ entry.subject }}</td>
+                        <td>{{ entry.teacher }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">No timetable available for today.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
             </table>
         </div>
     </main>
 
+    <script src="{% static 'dashboard/js/timeTable.js' %}"></script>
+    <script src="{% static 'dashboard/js/app.js' %}"></script>
 </body>
-
-<script src="timeTable.js"></script>
-<script src="app.js"></script>
 </html>

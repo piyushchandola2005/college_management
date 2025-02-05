@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ...existing code... -->
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/teacher_dashboard.css' %}">
+    <!-- ...existing code... -->
+</head>
+<body>
+    <header>
+        <!-- ...existing code... -->
+        <div class="navbar">
+            <a href="{% url 'teacher_dashboard' %}" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>Home</h3>
+            </a>
+            <a href="{% url 'manage_students' %}">
+                <span class="material-icons-sharp">group</span>
+                <h3>Manage Students</h3>
+            </a>
+            <a href="{% url 'manage_courses' %}">
+                <span class="material-icons-sharp">book</span>
+                <h3>Manage Courses</h3>
+            </a>
+            <a href="{% url 'logout' %}" onclick="logout()">
+                <span class="material-icons-sharp">logout</span>
+                <h3>Logout</h3>
+            </a>
+        </div>
+        <!-- ...existing code... -->
+    </header>
+    <div class="container">
+        <aside>
+            <!-- ...existing code... -->
+        </aside>
+        <main>
+            <h1>Teacher Dashboard</h1>
+            <!-- Add teacher-specific features here -->
+        </main>
+        <div class="right">
+            <!-- Add teacher-specific widgets here -->
+        </div>
+    </div>
+    <!-- ...existing code... -->
+</body>
+</html>

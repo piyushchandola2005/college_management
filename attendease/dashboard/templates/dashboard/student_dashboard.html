@@ -17,23 +17,23 @@
             <h2><span class="danger">ATTEND</span>EASE</h2>
         </div>
         <div class="navbar">
-            <a href="{% url 'student_dashboard' %}" class="active">
+            <a href="{% url 'dashboard:student_dashboard_view' %}" class="active">
                 <span class="material-icons-sharp">home</span>
                 <h3>Home</h3>
             </a>
-            <a href="{% url 'timetable' %}" onclick="timeTableAll()">
+            <a href="{% url 'dashboard:timetable_view' %}" onclick="timeTableAll()">
                 <span class="material-icons-sharp">today</span>
                 <h3>Time Table</h3>
             </a> 
-            <a href="{% url 'exam' %}">
+            <a href="{% url 'dashboard:exam_view' %}">
                 <span class="material-icons-sharp">grid_view</span>
                 <h3>Examination</h3>
             </a>
-            <a href="{% url 'change_password' %}">
+            <a href="{% url 'dashboard:change_password_view' %}">
                 <span class="material-icons-sharp">password</span>
                 <h3>Change Password</h3>
             </a>
-            <a href="{% url 'logout' %}" onclick="logout()">
+            <a href="{% url 'dashboard:logout_view' %}" onclick="logout()">
                 <span class="material-icons-sharp">logout</span>
                 <h3>Logout</h3>
             </a>
@@ -53,7 +53,7 @@
             <div class="profile">
                 <div class="top">
                     <div class="profile-photo">
-                        <a href="{% url 'profile' %}" class="profile-photo">
+                        <a href="{% url 'dashboard:profile_view' %}" class="profile-photo">
                             <img id="profile-picture" src="{% static 'dashboard/images/profile-placeholder.png' %}" alt="Profile Picture">
                         </a>
                     </div>
@@ -98,7 +98,7 @@
                 </div>
                 <div class="subject-card">
                     <span class="material-icons-sharp">computer</span>
-                    <h3>A.I<br>KAI501</h3>
+                    <h3>A.I<br>KAI501</h2>
                     <h2>27/30</h2>
                     <div class="progress">
                         <svg><circle cx="38" cy="38" r="36"></circle></svg>

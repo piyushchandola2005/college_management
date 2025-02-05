@@ -1,24 +1,20 @@
-from django.contrib.auth.views import LoginView
-from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+from django.shortcuts import redirect, render
+from django.contrib import messages
 
-class CustomLoginView(LoginView):
-    template_name = 'accounts/login.html'
-
-    def form_valid(self, form):
-        # Use the email for authentication
-        email = form.cleaned_data['username']
-        password = form.cleaned_data['password']
-        user = authenticate(self.request, username=email, password=password)
+def login_view(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=email, password=password)
         if user is not None:
-            login(self.request, user)
-            return super().form_valid(form)
+            login(request, user)
+            if user.is_superuser:
+                return redirect('dashboard:admin')
+            elif user.groups.filter(name='Teachers').exists():
+                return redirect('dashboard:teacher')
+            else:
+                return redirect('dashboard:student_dashboard_view')
         else:
-            return self.form_invalid(form)
-
-    def get_success_url(self):
-        return '/dashboard/student_dashboard/'  # Redirect to the student dashboard after login
-
-def signup_view(request):
-    # Your signup view logic here
-    return render(request, 'accounts/signup.html')
+            messages.error(request, 'Invalid email or password.')
+    return render(request, 'accounts/login.html')

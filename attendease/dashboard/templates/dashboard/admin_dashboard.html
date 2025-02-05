@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Add your CSS and other head elements here -->
+</head>
+<body>
+    <h1>Welcome to the Admin Dashboard</h1>
+    <!-- Add your dashboard content here -->
+    {% extends 'base.html' %}
+
+    {% block title %}Admin Dashboard{% endblock %}
+
+    {% block content %}
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <div class="admin-cards">
+            <div class="card">
+                <span class="material-icons">group</span>
+                <h3>Users</h3>
+                <p>Manage users</p>
+            </div>
+            <div class="card">
+                <span class="material-icons">school</span>
+                <h3>Courses</h3>
+                <p>Manage courses</p>
+            </div>
+            <div class="card">
+                <span class="material-icons">event</span>
+                <h3>Timetable</h3>
+                <p>Manage schedules</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

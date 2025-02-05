@@ -1,0 +1,29 @@
+.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}College ERP{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{% static 'images/logo.png' %}" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard:index' %}"><span class="material-icons">dashboard</span>Dashboard</a></li>
+                <li><a href="{% url 'dashboard:profile' %}"><span class="material-icons">person</span>Profile</a></li>
+                <li><a href="{% url 'logout' %}"><span class="material-icons">logout</span>Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
